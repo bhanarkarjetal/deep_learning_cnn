@@ -5,21 +5,21 @@ The goal is to build a vision pipeline that can read still images of hand pose s
 This involves:
 1.	Loading & structuring the raw data (NumPy arrays supplied by Kaggle). 
 2.	Explored the distribution and quality of the images.
-3.	Pre processing (normalization, augmentation, reshaping).
+3.	Pre-processing (normalization, augmentation, reshaping).
 4.	Evaluation & error analysis to understand where and why misclassifications occur.
 
 ## Dataset:
 The dataset is taken from Kaggle which consists of images for digits in sign language. It consists of 2062 images of size 64x64 and a label dataset of digits 0 to 9 in .npy format
-•	x.shape = (2062, 64, 64)
-•	y.shape = (2062, 10)
+* x.shape = (2062, 64, 64)
+* y.shape = (2062, 10)
 
 ## Data Cleaning and Exploration
 
-1. Generate count-plot for label distribution in entire dataset
+1. Generated a count plot for label distribution in the entire dataset
 
 ![alt text](https://github.com/bhanarkarjetal/deep_learning_cnn/blob/main/digit_counts.png)
 
-3. Plotted first and last sample to sanity check label alignment.
+3. Plotted the first and last sample to sanity check label alignment.
 
 ![alt text](https://github.com/bhanarkarjetal/deep_learning_cnn/blob/main/sample_images.png)
 
@@ -27,7 +27,7 @@ The dataset is taken from Kaggle which consists of images for digits in sign lan
 
 ![alt text](https://github.com/bhanarkarjetal/deep_learning_cnn/blob/main/label_images.png)
 
-4. Visualized intra class variation: 10 random images for a single digit.
+4. Visualized intra-class variation: 10 random images for a single digit.
 
 ![alt text](https://github.com/bhanarkarjetal/deep_learning_cnn/blob/main/sample_single_label_images.png)
 
@@ -95,19 +95,19 @@ The dataset is taken from Kaggle which consists of images for digits in sign lan
 ![alt text](https://github.com/bhanarkarjetal/deep_learning_cnn/blob/main/predictions_3.png)
 
 ## Model recommendation
-* Given the observed metrics, Model 1 (the baseline CNN) that combines MaxPooling and Dropout—should be adopted as the production model. It delivers the highest test set accuracy (91.3 %) with a low, matching train and test loss, indicating a healthy balance between bias and variance. 
-*	In contrast, Model 2 under fits badly after aggressive data augmentation, while Model 3 over fits, achieving very high training accuracy on unseen data. 
-*	Model 1’s architecture is also computationally lighter than the all convolutional variant and requires no additional tuning to stabilise heavy augmentations.
-*	For these reasons, it offers the most reliable performance to complexity trade off and provides a solid baseline that can be incrementally improved through targeted hyper parameter or data centric tweaks without risking drastic accuracy swings.
+* Given the observed metrics, Model 1 (the baseline CNN), which combines MaxPooling and Dropout, should be adopted as the production model. It delivers the highest test set accuracy (91.3 %) with a low, matching train and test loss, indicating a healthy balance between bias and variance. 
+*	In contrast, Model 2 underfits badly after aggressive data augmentation, while Model 3 overfits, achieving very high training accuracy on unseen data. 
+*	Model 1’s architecture is also computationally lighter than the all-convolutional variant and requires no additional tuning to stabilise heavy augmentations.
+*	For these reasons, it offers the most reliable performance for the complexity trade-off. It provides a solid baseline that can be incrementally improved through targeted hyperparameters or data-centric tweaks without risking drastic accuracy swings.
 
 ## Future Steps
-•	Hyperparameter tuning
-  - Experiment with optimisers (AdamW, RMSprop, Nadam) and learning rate schedulers (Cosine decay, One Cycle).
-  - Adjust kernel counts, filter sizes, and dropout rates to balance capacity and regularisation.
-•	Network depth & architecture search
-  - Add additional convolutional blocks or residual connections to capture finer spatial cues.
-•	Transfer learning & compute reduction
-  - Load a pretrained ImageNet backbone, freeze lower layers, and fine tune only the classifier head; this cuts training time while boosting accuracy.
-•	Regularisation techniques
+* Hyperparameter tuning:
+    - Experiment with optimisers (AdamW, RMSprop, Nadam) and learning rate schedulers (Cosine decay, One Cycle).
+    - Adjust kernel counts, filter sizes, and dropout rates to balance capacity and regularisation.
+*	Network depth & architecture search
+    - Add additional convolutional blocks or residual connections to capture finer spatial cues.
+*	Transfer learning & compute reduction
+  - Load a pretrained ImageNet backbone, freeze lower layers, and fine-tune only the classifier head; this cuts training time while boosting accuracy.
+*	Regularisation techniques
   - Introduce batch normalisation and weight decay.
 
