@@ -107,7 +107,7 @@ The dataset is taken from Kaggle which consists of images for digits in sign lan
 *	Network depth & architecture search
     - Add additional convolutional blocks or residual connections to capture finer spatial cues.
 *	Transfer learning & compute reduction
-  - Load a pretrained ImageNet backbone, freeze lower layers, and fine-tune only the classifier head; this cuts training time while boosting accuracy.
+    - Load a pretrained ImageNet backbone, freeze lower layers, and fine-tune only the classifier head; this cuts training time while boosting accuracy.
 *	Regularisation techniques
-  - Introduce batch normalisation and weight decay.
+    - Introduce batch normalisation and weight decay.
 
