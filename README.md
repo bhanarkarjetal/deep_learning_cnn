@@ -14,10 +14,21 @@ The dataset is taken from Kaggle which consists of images for digits in sign lan
 •	y.shape = (2062, 10)
 
 **Data Cleaning and Exploration**
-1. Plotted first and last sample to sanity check label alignment.
-2. Generate count-plot for label distribution in entire dataset
+
+1. Generate count-plot for label distribution in entire dataset
+
+![alt text](https://github.com/bhanarkarjetal/deep_learning_cnn/blob/main/digit_counts.png)
+
 3. Plotted first and last sample to sanity check label alignment.
-4. Generated one sample image of each label.
-5. Visualized intra class variation: 10 random images for a single digit.
+
+![alt text](https://github.com/bhanarkarjetal/deep_learning_cnn/blob/main/sample_images.png)
+
+3. Generated one sample image of each label.
+
+![alt text](https://github.com/bhanarkarjetal/deep_learning_cnn/blob/main/label_images.png)
+
+4. Visualized intra class variation: 10 random images for a single digit.
+
 ![alt text](https://github.com/bhanarkarjetal/deep_learning_cnn/blob/main/sample_single_label_images.png)
+
 
